@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        JQuery Calculator
+    </title>
+    <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="scripts.js"></script>
+
+</head>
+
+<body>
+    <div id="description">
+        <p>Very simple calculator in jQuery</p>
+        <a href="style.css" target="_blank">css source</a>
+        <br>
+        <a href="scripts.js" target="_blank">jquery source</a>
+    </div>
+    <div class="container">
+        <div class="container text-center">
+            <input id="inputs" type="text" disabled>
+        </div>
+        <div id="keyboard" class="container">
+            <div class="container text-center" id="btbody">
+                <a id="bt_1" class="btn btn-primary">1</a>
+                <a id="bt_2" class="btn btn-default">2</a>
+                <a id="bt_3" class="btn btn-primary">3</a>
+                <br>
+                <a id="bt_4" class="btn btn-default">4</a>
+                <a id="bt_5" class="btn btn-primary">5</a>
+                <a id="bt_6" class="btn btn-default">6</a>
+                <br>
+                <a id="bt_7" class="btn btn-primary">7</a>
+                <a id="bt_8" class="btn btn-default">8</a>
+                <a id="bt_9" class="btn btn-primary">9</a>
+                <br>
+                <a id="bt_clear" class="btn btn-default">C</a>
+                <a id="bt_0" class="btn btn-default">0</a>
+            </div>
+
+            <div id="opbody" class="container text-center">
+                <a id="bt_sum" class="btn btn-primary">+</a>
+                <a id="bt_sub" class="btn btn-primary">-</a>
+                <a id="bt_divi" class="btn btn-primary">/</a>
+                <a id="bt_multi" class="btn btn-primary">*</a>
+            </div>
+            <div class="text-center">
+                <a class="btn btn-success" id="bt_result">=</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

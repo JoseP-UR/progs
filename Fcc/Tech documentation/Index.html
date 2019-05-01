@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>
+        Tech doc
+    </title>
+    <link rel="stylesheet" href="main.css" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</head>
+
+<body>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+    <nav id="navbar">
+        <header>
+            RSCSS
+        </header>
+        <a class="nav-link" href="#What_is_RSCSS">What is RSCSS</a>
+        <a class="nav-link" href="#Components">Components</a>
+        <a class="nav-link" href="#Elements">Elements</a>
+        <a class="nav-link" href="#Variants">Variants</a>
+        <a class="nav-link" href="#Nested_Components">Nested Components</a>
+        <a class="nav-link" href="#Layouts">Layouts</a>
+        <a class="nav-link" href="#Helpers">Helpers</a>
+        
+    </nav>
+
+    <main id="main-doc">
+        <section class="main-section" id="What_is_RSCSS">
+            <header>
+                What is RSCSS
+            </header>
+            <p>Any CSS greater than 1000 lines will get unwieldy. You'll eventually run into these common pitfalls:</p>
+            <ul>
+                <li> "What does this class mean?"</li>
+                <li> "Is this class still being used?"</li>
+                <li> "If I make a new class green, will there be a clash?"</li>
+            </ul>
+            <p>rscss is an attempt to make sense of all these. It is not a framework. It's simply a set of ideas to guide your process of building maintainable CSS for any modern website or application.</p>
+        </section>
+
+        <section class="main-section" id="Components">
+            <header>
+                Components
+            </header>
+            <p>Components will be named with at least two words, with a dash between each word. Examples of components:</p>
+            <ul>
+                <li>A like button <code>(.like-button)</code></li>
+                <li>A search form <code>(.search-form)</code></li>
+                <li>A news article card <code>(.article-card)</code></li>
+                <li>A namespaced component <code>(.rico-custom-header)</code></li>
+            </ul>
+        </section>
+
+        <section class="main-section" id="Elements">
+            <header>
+                Elements
+            </header>
+            <p>Elements are things inside your component.</p>
+
+            <div class="sub-section">
+                <h3>Naming Elements</h3>
+                <p>Each component may have elements. They should have classes that are only <strong>one word</strong>.</p>
+                <code class="codeBlock">
+                    .search-form {<br>
+                        &gt; .field { <i>/* ... */ </i>}<br>
+                        &gt; .action { <i>/* ... */</i> }<br>
+                      }<br>
+                </code>
+            </div>
+
+            <div class="sub-section">
+                <h3>Element selectors</h3>
+                <p>Prefer to use the &gt; child selector whenever possible. This prevents bleeding through nested components, and performs better than descendant selectors.</p>
+                <code class="codeBlock">
+                    .article-card {<br>
+                        .title     { <i>/* okay */</i> }<br>
+                        &gt .author  { <i>/* ✓ better */</i> }<br>
+                      }<br>
+                </code>
+            </div>
+
+            <div class="sub-section">
+                <h3>On multiple words</h3>
+                <p>For those that need two or more words, concatenate them without dashes or underscores.</p>
+                <code class="codeBlock">
+                    .profile-box {<br>
+                        &gt .firstname { <i>/* ... */</i> }<br>
+                        &gt .lastname { <i>/* ... */</i> }<br>
+                        &gt .avatar { <i>/* ... */</i> }<br>
+                      }<br>
+                </code>
+            </div>
+
+            <div class="sub-section">
+                <h3>Avoid tag selectors</h3>
+                <p>Use classnames whenever possible. Tag selectors are fine, but they may come at a small performance penalty and may not be as descriptive.</p>
+                <code class="codeBlock">
+                    .article-card {<br>
+                        &gt; h3    { <i>/* ✗ avoid */ </i>}<br>
+                        &gt; .name {<i> /* ✓ better */</i> }<br>
+                      }<br>
+                </code>
+            </div>
+
+
+        </section>
+
+
+        <section class="main-section" id="Variants">
+            <header>
+                Variants
+            </header>
+            <p>Components may have variants. Elements may have variants, too.</p>
+
+            <div class="sub-section">
+                <h3>Naming variants</h3>
+                <p>Classnames for variants will be prefixed by a dash <code>(-)</code>.</p>
+                <code class="codeBlock">
+                    .like-button {<br>
+                        &.-wide { <i>/* ... */</i> }<br>
+                        &.-short { <i>/* ... */</i> }<br>
+                        &.-disabled {<i> /* ... */</i> }<br>
+                      }<br>
+                </code>
+            </div>
+
+            <div class="sub-section">
+                <h3>Element variants</h3>
+                <p>Elements may also have variants. <code>(-)</code>.</p>
+                <code class="codeBlock">
+                    .shopping-card { <br>
+                        &gt; .title { <i> /* ... */</i> } <br>
+                        &gt; .title.-small { <i> /* ... */</i> } <br>
+                      }<br>
+                </code>
+            </div>
+
+            <div class="sub-section">
+                <h3>Dash prefixes</h3>
+                <p>Dashes are the preferred prefix for variants. <code>(-)</code>.</p>
+                <ul>
+                    <li> It prevents ambiguity with elements.</li>
+                    <li> A CSS class can only start with a letter, _ or -.</li>
+                    <li> Dashes are easier to type than underscores.</li>
+                    <li> It kind of resembles switches in UNIX commands (<code>gcc -O2 -Wall -emit-last</code>).</li>
+                </ul>
+            </div>
+
+
+        </section>
+
+        <section class="main-section" id="Nested_Components">
+            <header>
+                Nested Components
+            </header>
+            <code class="codeBlock">
+                
+            &lt;div class='article-link'&gt; <br>
+            &lt;div class='vote-box'&gt; <br>
+                      ...
+                      &lt;&sol;div&gt; <br>
+                      &lt;h3 class='title'&gt;...&lt;&sol;h3&gt; <br>
+                      &lt;p class='meta'&gt;...&lt;&sol;p&gt; <br>
+                      &lt;&sol;div&gt; <br>
+            </code>
+
+            <p>Sometimes it's necessary to nest components. Here are some guidelines for doing that.</p>
+
+            <div class="sub-section">
+                <h3>Variants</h3>
+                <p>A component may need to appear a certain way when nested in another component. Avoid modifying the nested component by reaching into it from the containing component.</p>
+                <code class="codeBlock">
+                        .article-header {<br>
+                            &gt; .vote-box &gt; .up { <i>/* ✗ avoid this */</i> }<br>
+                          }<br>
+                </code>
+                <p>Instead, prefer to add a variant to the nested component and apply it from the containing component.</p>
+                <code class="codeBlock">
+                        &lt;div class='article-header'&gt;<br>
+                                &lt;div class='vote-box -highlight'&gt;<br>
+                                  ...<br>
+                                &lt;&sol;div&gt;<br>
+                                ...<br>
+                              &lt;&sol;div&gt;<br>
+                </code>
+            </div>
+
+            <div class="sub-section">
+                <h3>Simplifying nested components</h3>
+                <p>Sometimes, when nesting components, your markup can get dirty:</p>
+                <code class="codeBlock">
+                        &lt;div class='search-form'&gt; <br>
+                                &lt;input class='input' type='text'&gt; <br>
+                                &lt;button class='search-button -red -large'&gt;&lt;/button&gt; <br>
+                              &lt;/div&gt; <br>
+                </code>
+                <p>You can simplify this by using your CSS preprocessor's <code>@extend</code> mechanism:</p>
+                <code class="codeBlock">
+                        &lt;div class='search-form'&gt; <br>
+                                &lt;input class='input' type='text'&gt;<br>
+                                &lt;button class='submit'&gt;&lt;/button&gt;<br>
+                              &lt;/div&gt;<br>
+            </code>
+                <code class="codeBlock">
+                    .search-form { <br>
+                        &gt; .submit { <br>
+                          @extend .search-button; <br>
+                          @extend .search-button.-red; <br>
+                          @extend .search-button.-large;<br>
+                        }<br>
+                      }<br>
+            </code>
+            </div>
+
+        </section>
+
+        <section class="main-section" id="Layouts">
+            <header>
+                Layouts
+            </header>
+            <div class="sub-section">
+                <h3>Avoid positioning properties</h3>
+                <p>Components should be made in a way that they're reusable in different contexts. Avoid putting these properties in components:</p>
+                <ul>
+                    <li> Positioning (<code>position</code>, <code>top</code>, <code>left</code>, <code>right</code>, <code>bottom</code>)</li>
+                    <li> Floats (<code>float</code>, <code>clear</code>)</li>
+                    <li> Margins (<code>margin</code>)</li>
+                    <li> Dimensions (<code>width</code>, <code>height</code>) *</li>
+                </ul>
+            </div>
+
+            <div class="sub-section">
+                <h3>Fixed dimensions</h3>
+                <p>Exception to these would be elements that have fixed width/heights, such as avatars and logos.</p>
+            </div>
+
+            <div class="sub-section">
+                <h3>Define positioning in parents</h3>
+                <p>If you need to define these, try to define them in whatever context they will be in. In this example below, notice that the widths and floats are applied on the list component, not the component itself.</p>
+                <code class="codeBlock">
+                        .article-list { <br>
+                            &amp; {<br>
+                              @include clearfix;<br>
+                            }<br>
+                          
+                            &gt; .article-card {<br>
+                              width: 33.3%;<br>
+                              float: left;<br>
+                            }<br>
+                          }<br>
+                          
+                          .article-card {<br>
+                            &amp; { <i>/* ... */</i> }<br>
+                            &gt; .image { <i>/* ... */</i> }<br>
+                            &gt; .title { <i>/* ... */ </i>}<br>
+                            &gt; .category {<i> /* ... */</i> }<br>
+                          }
+                </code>
+
+            </div>
+
+        </section>
+
+        <section class="main-section" id="Helpers">
+            <header>
+                Helpers
+            </header>
+            <p>For general-purpose classes meant to override values, put them in a separate file and name them beginning with an underscore. They are typically things that are tagged with !important. Use them very sparingly.</p>
+
+            <code class="codeBlock">
+                    ._unmargin { margin: 0 !important; }<br>
+                    ._center { text-align: center !important; }<br>
+                    ._pull-left { float: left !important; }<br>
+                    ._pull-right { float: right !important; }<br>
+            </code>
+
+            <div class="sub-section">
+                <h3>Naming helpers</h3>
+                <p>Prefix classnames with an underscore. This will make it easy to differentiate them from modifiers defined in the component. Underscores also look a bit ugly which is an intentional side effect: using too many helpers should be discouraged.</p>
+                <code class="codeBlock">
+                            &lt;div class='order-graphs -slim _unmargin'&gt; <br>
+                                &lt;/div&gt; <br>
+                    </code>
+            </div>
+
+            <div class="sub-section">
+                <h3>Organizing helpers</h3>
+                <p>Place all helpers in one file called <code>helpers</code>. While you can separate them into multiple files, it's very preferrable to keep your number of helpers to a minimum.</p>
+            </div>
+
+        </section>
+
+
+
+        <!--
+             <a class="nav-link" href="#Layouts">Layouts</a>
+            <section class="main-section" id="">
+            <header>
+
+            </header>
+
+        </section>
+
+         <div class="sub-section">
+             <h3></h3>
+         </div>
+    
+            <code class="codeBlock">
+                </code>
+    -->
+
+    </main>
+
+
+
+
+</body>
+
+</html>

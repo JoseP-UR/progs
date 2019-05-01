@@ -1,0 +1,25 @@
+body {
+    font-size: 300%;
+    font-weight: bold;
+}
+
+.btn {
+    font-size: 150%;
+    margin: 5px;
+    font-weight: bold;
+}
+
+#keyboard {
+    margin-top: 20px;
+    border: 2px solid black;
+}
+
+#inputs {
+    margin-top: 20px;
+    width: 300px;
+}
+
+#bt_result {
+    padding-left: 14%;
+    padding-right: 18%;
+}

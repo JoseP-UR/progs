@@ -1,0 +1,237 @@
+/*navbar and general settings*/
+
+html,
+body,
+body * {
+    padding: 0;
+    margin: 0;
+}
+
+#navbar {
+    text-align: right;
+    position: fixed;
+    width: 100%;
+    height: 83px;
+    background: black;
+    z-index: 10;
+}
+
+#navbar a {
+    width: 15%;
+    height: 50px;
+    display: inline-block;
+    text-align: center;
+    padding: 25px 0 0 0;
+    text-decoration: none;
+    color: crimson;
+    background: cadetblue;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 0 20px 0 0px;
+}
+
+.section {
+    height: calc(100vh - 83px);
+    width: 100%;
+    text-align: center;
+}
+
+
+/*about section*/
+
+#welcome-section {
+    height: 100vh;
+    background: rgb(233, 246, 255);
+}
+
+.welcomeContent {
+    padding: 50vh 0 0 0;
+}
+
+#welcome-section h1 {
+    margin: 0 0 0 0;
+    padding: 0;
+}
+
+#welcome-section h4 {
+    margin: 0;
+    padding: 0;
+    color: #7cb1de;
+}
+
+
+/*projects section*/
+
+#projects {
+    background: rgb(226, 255, 226);
+    padding-top: 83px;
+}
+
+#projects>h2 {
+    padding: 20px 0 15px 0;
+}
+
+.projectContainer {
+    background: #b5c9e8;
+    width: 90%;
+    height: calc(100% - 80px);
+    margin: auto;
+    text-align: left;
+    box-shadow: inset 0px 0px 24px -5px;
+    border: 1px solid #000;
+    border-radius: 20px;
+    overflow-y: auto;
+    min-width: 380px;
+    max-width: 1366px;
+}
+
+.project-tile {
+    background: aliceblue;
+    width: 20%;
+    height: 45%;
+    margin: 20px 0 0 20px;
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 20px;
+    box-shadow: 3px 1px 16px -8px;
+    animation-name: cardHoverOut;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    min-width: 310px;
+}
+
+.project-tile:hover {
+    animation-name: cardHover;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.cardLink {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    position: absolute;
+    background-size: 100% 80% !important;
+    background-repeat: no-repeat !important;
+    text-decoration: none;
+    z-index: 0;
+}
+
+.cardName {
+    position: relative;
+    top: 80%;
+    border-top: 1px solid black;
+    padding-top: 7%;
+    text-align: center;
+    font-size: 150%;
+    font-weight: bold;
+    color: black;
+}
+
+
+/*profile*/
+
+#profile {
+    background: rgb(54, 67, 255);
+    position: absolute;
+    height: 50%;
+    padding-top: 25px;
+    color: #f3f3f3;
+}
+
+.profileLink {
+    border-radius: 10px;
+    display: block;
+    background: #24292e;
+    margin: 30px auto;
+    padding: 13px 0;
+    width: 94%;
+    color: #f3f3f3;
+    font-size: 25px;
+    position: relative;
+    border: 1px solid #f3f3f3;
+    box-shadow: 2px 1px 0px 1px;
+}
+
+#linkedinLink {
+    color: #282828;
+    background: #e1e9ee;
+    border: 1px solid black;
+}
+
+#linkedinLink span {
+    color: #0077b5;
+}
+
+.profileLink:hover {
+    transform: translate(2px, 1px);
+    box-shadow: 0px 0px 0px 0px;
+}
+
+#fccLink {
+    background: darkgreen;
+}
+
+#facebookLink {
+    background: #4267b2;
+    border: 1px solid black;
+    color: black;
+}
+
+#facebookLink span {
+    color: #f3f3f3;
+}
+
+#mailLink {
+    color: #d93025;
+    border: 1px solid #d93025;
+    background: #f3f3f3;
+}
+
+
+/*animations*/
+
+@keyframes cardHover {
+    from {
+        transform: scale(1.0);
+    }
+    to {
+        transform: scale(1.1);
+        box-shadow: 4px 1px 40px -8px;
+    }
+}
+
+@keyframes cardHoverOut {
+    from {
+        transform: scale(1.05);
+        box-shadow: 4px 1px 40px -8px;
+    }
+    to {
+        transform: scale(1.0);
+        box-shadow: 3px 1px 16px -8px;
+    }
+}
+
+
+/*mobile*/
+
+@media (max-width: 778px) {
+    .project-tile {
+        margin: 20px 0 0 15%;
+        width: 70% !important;
+    }
+}
+
+@media (max-width: 600px) {
+    #navbar a {
+        width: 25%;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-tile {
+        margin: 20px 0 0 10%;
+        width: 80% !important;
+        min-width: 10%;
+    }
+}

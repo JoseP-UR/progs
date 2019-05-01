@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>
+        Fcc Survey form project
+    </title>
+
+    <link rel="stylesheet" href="main.css" type="text/css">
+</head>
+
+<body>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <div class="container">
+        <h1 id="title">Survey Form</h1>
+    </div>
+
+    <div class="container">
+        <p id="description">Tell me about it</p>
+
+        <form id="survey-form">
+            <div class="inputBlock">
+                <label id="name-label" for="name">Name</label>
+                <input type="text" name="name" id="name" placeholder="name" required>
+            </div>
+
+            <div class="inputBlock">
+                <label id="email-label" for="email">E-mail</label>
+                <input type="email" name="email" id="email" placeholder="email" required>
+            </div>
+
+            <div class="inputBlock">
+                <label id="number-label" for="number">Number?</label>
+                <input type="number" min="1" max="100" name="number" id="number" placeholder="number">
+            </div>
+
+            <div class="inputBlock">
+                <label id="option-label" for="dropdown">laugh?</label>
+                <select id="dropdown">
+                    <option>Select</option>
+                    <option>haha</option>
+                    <option>lol</option>
+                    <option>hue</option>
+                    <option>jajaja</option>
+                    <option>huahuahua</option>
+                    <option>kkkkkkkk</option>
+                    <option>oakspoakspoakspok</option>
+                </select>
+            </div>
+
+            <div class="inputBlockRadio">
+                <label for="inpradio">Select one</label>
+                <div name="inpRadio" class="inputRadio">
+                    <input type="radio" name="radio" value="yes"> Yes
+                    <input type="radio" name="radio" value="no"> No
+                </div>
+            </div>
+
+            <div class="inputBlock inputBlockCheck">
+                <label for="checkContainer">Select one or more</label>
+                <div name="checkContainer" class="checkContainer">
+                    <input type="checkbox" value="one"> one
+                    <input type="checkbox" value="two"> two
+                    <input type="checkbox" value="three"> three
+                    <input type="checkbox" value="four"> four
+                </div>
+            </div>
+
+            <div class="inputBlock">
+                <textarea>
+                    
+                </textarea>
+            </div>
+            <div class="inputBlock">
+                <input type="submit" id="submit" value="Submit">
+            </div>
+        </form>
+
+
+    </div>
+
+</body>
+
+
+
+</html>
