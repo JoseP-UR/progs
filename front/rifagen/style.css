@@ -10,6 +10,7 @@
 
 .gen-rifa-field {
     display: flex;
+    flex-wrap: wrap;
     margin-top: 10px;
     flex-direction: row;
 }
@@ -25,10 +26,6 @@
     flex-basis: 80%;
 }
 
-.gen-rifa-field-input[type="date"] {
-    flex-basis: 15%;
-}
-
 .gen-rifa-field-button {
     flex-basis: 100%;
     color: white;
@@ -38,7 +35,13 @@
 }
 
 
-
+.field_error {
+    flex-basis: 68%;
+    margin: auto;
+    font-weight: bold;
+    color: #ec0000;
+    font-size: 13px;
+}
 
 
 
