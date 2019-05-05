@@ -8,9 +8,9 @@ window.insertError = function(element, message) {
 
 window.generateRifas = function(rifaData){
     $('.genContainer').html('');
-
+    
     var rifaTemplate = $('template[id="rifa-template"]').html()
-
+    
     rifaTemplate = rifaTemplate.replace('{{rifa_Title}}', rifaData.titulo);
     rifaTemplate = rifaTemplate.replace('{{rifa_Description}}', rifaData.descricao);   
     rifaTemplate = rifaTemplate.replace('{{rifa_Data}}', rifaData.sorteio);
@@ -35,15 +35,15 @@ window.validateForm = function(formName) {
 
 $('.gen-rifa-field-button[name="bt-gerar"]').click(function() {
     if(validateForm('genForm')){
-    var rifaObj = {
-        titulo: $('input[name="titulo-rifa"]').val(),
-        quantidade: $('input[name="qt-rifa"]').val(),
-        preco: $('input[name="price-rifa"]').val(),
-        sorteio: $('input[name="date-rifa"]').val(),
-        descricao: $('textarea[name="desc-rifa"]').val(),
-    }
-    generateRifas(rifaObj);
-    conseole.log('yes')
+        var rifaObj = {
+            titulo: $('input[name="titulo-rifa"]').val(),
+            quantidade: $('input[name="qt-rifa"]').val(),
+            preco: $('input[name="price-rifa"]').val(),
+            sorteio: $('input[name="date-rifa"]').val(),
+            descricao: $('textarea[name="desc-rifa"]').val(),
+        }
+        generateRifas(rifaObj);
+        conseole.log('yes')
     }
     else {
         console.log('no')
