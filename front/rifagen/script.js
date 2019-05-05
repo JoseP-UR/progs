@@ -7,7 +7,6 @@ window.insertError = function(element, message) {
 }
 
 window.generateRifas = function(rifaData){
-
     $('.genContainer').html('');
 
     var rifaTemplate = $('template[id="rifa-template"]').html()
