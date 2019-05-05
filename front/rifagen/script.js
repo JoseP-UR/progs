@@ -43,9 +43,5 @@ $('.gen-rifa-field-button[name="bt-gerar"]').click(function() {
             descricao: $('textarea[name="desc-rifa"]').val(),
         }
         generateRifas(rifaObj);
-        conseole.log('yes')
-    }
-    else {
-        console.log('no')
     }
 });
