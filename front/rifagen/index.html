@@ -1,67 +1,58 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Gerador de Rifas</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    
     <link rel="stylesheet" type="text/css" media="screen" href="style.css">
-
+    
 </head>
-
 <body>
-
+    
     <form name="genForm" novalidate onsubmit="preventDefault(event)">
         <div class="genData">
-
+            
             <div class="gen-rifa-field">
                 <label class="gen-rifa-field-name" for="titulo-rifa">Título da rifa*:</label>
                 <input class="gen-rifa-field-input" type="text" name="titulo-rifa" value="test">
             </div>
-
+            
             <div class="gen-rifa-field">
                 <label class="gen-rifa-field-name" for="qt-rifa">Quantidade de rifas*:</label>
                 <input class="gen-rifa-field-input" type="number" name="qt-rifa" value="3">
             </div>
-
+            
             <div class="gen-rifa-field">
                 <label class="gen-rifa-field-name" for="price-rifa">Preço*:</label>
                 <input class="gen-rifa-field-input" type="text" name="price-rifa" value="R$ 2,50">
             </div>
             <div class="gen-rifa-field">
                 <label class="gen-rifa-field-name" for="date-rifa">Data do sorteio*:</label>
-                <input class="gen-rifa-field-input" type="date" name="date-rifa">
+                <input class="gen-rifa-field-input" type="text" name="date-rifa" value="2019-12-02">
             </div>
-
+            
             <div class="gen-rifa-field">
                 <label class="gen-rifa-field-name" for="desc-rifa">Descrição*:</label>
-                <textarea class="gen-rifa-field-input" placeholder="Digite a descrição da sua rifa aqui"
-                    name="desc-rifa">Vale um ovo de pascoa da cocô show</textarea>
+                <textarea class="gen-rifa-field-input" placeholder="Digite a descrição da sua rifa aqui" name="desc-rifa" >Vale um ovo de pascoa da cocô show</textarea>
             </div>
             <div class="gen-rifa-field">
                 <button class="gen-rifa-field-button" name="bt-gerar">Gerar Rifas</button>
             </div>
         </div>
     </form>
-
+    
     <div class="genContainer">
-
+        
     </div>
-
-    <template id="rifa-template">
+    
+    <template id="rifa-template">  
         <div class="rifaBody">
             <div class="rifaForm">
-                <p>Nome:
-                    <hr class="rifaField">
-                </p>
-                <p>Endereço:
-                    <hr class="rifaField">
-                </p>
-                <p>Telefone:
-                    <hr class="rifaField">
-                </p>
+                <p>Nome: <hr class="rifaField"></p>
+                <p>Endereço: <hr class="rifaField"></p>
+                <p>Telefone: <hr class="rifaField"></p>
             </div>
             <div class="rifaDescription">
                 <div class="rifaDescription-title">
@@ -78,10 +69,7 @@
             </div>
         </div>
     </template>
-
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    
     <script type="text/javascript" src="script.js"></script>
 </body>
-
 </html>
